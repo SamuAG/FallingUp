@@ -1,0 +1,102 @@
+using UnityEngine;
+
+public class ObjectPicker : MonoBehaviour
+{
+    public Transform playerCamera;               // Referencia a la cámara del jugador
+    public float pickUpRange = 3.0f;             // Distancia máxima para recoger objetos
+    public float holdDistance = 2.0f;            // Distancia a la que se sostendrá el objeto frente al jugador
+    public float throwForce = 10.0f;             // Fuerza con la que se lanzará el objeto
+    public LayerMask pickUpLayer;                // Máscara de capas para objetos levantables
+
+    private GameObject heldObject = null;        // Objeto actualmente levantado
+    private Rigidbody heldObjectRb;              // Rigidbody del objeto levantado
+
+    public GameObject HeldObject { get => heldObject; set => heldObject = value; }
+
+    void Update()
+    {
+        if (heldObject == null)
+        {
+            // Intentar recoger un objeto
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                TryPickUpObject();
+            }
+        }
+        else
+        {
+            // Mover el objeto levantado
+            MoveObject();
+
+            // Soltar el objeto
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                DropObject();
+            }
+
+            // Lanzar el objeto
+            if (Input.GetMouseButtonDown(1)) // Botón derecho del mouse
+            {
+                ThrowObject();
+            }
+        }
+    }
+
+    void TryPickUpObject()
+    {
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, pickUpRange, pickUpLayer))
+        {
+            // Intentar recoger el objeto si tiene un Rigidbody
+            if (hit.collider.gameObject.GetComponent<Rigidbody>())
+            {
+                heldObject = hit.collider.gameObject;
+                heldObjectRb = heldObject.GetComponent<Rigidbody>();
+
+                // Desactivar la gravedad y fijar el objeto en su lugar
+                GravityObject gravityObject;
+                if (heldObjectRb.TryGetComponent<GravityObject>(out gravityObject)) gravityObject.enabled = false;
+                else heldObjectRb.useGravity = false;
+
+                // heldObjectRb.freezeRotation = true;
+            }
+        }
+    }
+
+    void MoveObject()
+    {
+        // Calcular la nueva posición y mover el objeto hacia ella
+        Vector3 targetPosition = playerCamera.position + playerCamera.forward * holdDistance;
+        Vector3 direction = targetPosition - heldObject.transform.position;
+
+        heldObjectRb.velocity = direction * 10f; // Ajusta el valor para suavizar el movimiento
+    }
+
+    public void DropObject()
+    {
+        if(heldObject == null && heldObjectRb == null) return;
+
+        // Soltar el objeto
+        GravityObject gravityObject;
+        if (heldObjectRb.TryGetComponent<GravityObject>(out gravityObject)) gravityObject.enabled = true;
+        else heldObjectRb.useGravity = true;
+        // heldObjectRb.freezeRotation = false;
+        heldObject = null;
+        heldObjectRb = null;
+    }
+
+    void ThrowObject()
+    {
+        // Lanzar el objeto con una fuerza determinada
+        GravityObject gravityObject;
+        if (heldObjectRb.TryGetComponent<GravityObject>(out gravityObject)) gravityObject.enabled = true;
+        else heldObjectRb.useGravity = true;
+        heldObjectRb.freezeRotation = false;
+        heldObjectRb.AddForce(playerCamera.forward * throwForce, ForceMode.VelocityChange);
+
+        heldObject = null;
+        heldObjectRb = null;
+    }
+}

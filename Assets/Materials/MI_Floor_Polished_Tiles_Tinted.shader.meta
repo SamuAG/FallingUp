@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 51476c0cd67eaa048908ea1892db7163
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - Material_Texture2D_0: {instanceID: 0}
+  - Material_Texture2D_1: {instanceID: 0}
+  - Material_Texture2D_2: {instanceID: 0}
+  - Material_Texture2D_3: {instanceID: 0}
+  - Material_Texture2D_4: {instanceID: 0}
+  - Material_Texture2D_5: {instanceID: 0}
+  - Material_Texture2D_6: {instanceID: 0}
+  - Material_Texture2D_7: {instanceID: 0}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
