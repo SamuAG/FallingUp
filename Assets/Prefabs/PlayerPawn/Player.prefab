@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 11400000, guid: d4b632f52d74ed9419eac5138247f375, type: 2}
-  gravityGun: {fileID: 4560367985004487610, guid: 569e62d168b27994f84a998ea2b4cdd5, type: 3}
+  gravityGun: {fileID: 4560367985004487610, guid: 6c1b78e0b54e4354584ba1afaa154c8e, type: 3}
   mainCam: {fileID: 6401918364827283314}
   equipementCam: {fileID: 5555073254167311814}
 --- !u!114 &748031759917879289

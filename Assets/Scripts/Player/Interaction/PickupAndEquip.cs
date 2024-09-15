@@ -67,7 +67,7 @@ public class PickupAndEquip : MonoBehaviour
     void TryPickupObject()
     {
         RaycastHit hit;
-        if (Physics.Raycast(playerCamera.position, Camera.main.transform.forward, out hit, pickupRange))
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, pickupRange))
         {
             if (hit.collider != null)
             {

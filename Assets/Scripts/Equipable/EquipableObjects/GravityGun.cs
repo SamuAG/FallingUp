@@ -51,11 +51,7 @@ public class GravityGun : Pickupable
         {
             SetLineRendererPosition(hit.point);  // Establecer la posición final del rayo en el punto de impacto
 
-            if (hit.transform.TryGetComponent(out GravityObjectModifier gravityObjectModifier))
-            {
-                gravityObjectModifier.ModifyGravityPrimary();
-            }
-            else if (hit.collider != null && hit.transform.CompareTag("targeteable") && !IsInLayer(hit.transform.gameObject, "PickUp") && IsInLayer(hit.transform.gameObject, "Gravitable"))
+            if (hit.collider != null && hit.transform.CompareTag("targeteable") && !IsInLayer(hit.transform.gameObject, "PickUp") && IsInLayer(hit.transform.gameObject, "Gravitable"))
             {
                 playerGravity.IsTargetRepulsor = false;
                 playerGravity.Target = hit.transform;
@@ -84,7 +80,7 @@ public class GravityGun : Pickupable
 
     public override void UseSecondaryDown()
     {
-        return;
+        if (Time.timeScale == 0) return;
         if (!playerGravity) playerGravity = gameManager.Player.GetComponent<GravityPlayerController>();
 
         StopAllCoroutines();
@@ -98,17 +94,7 @@ public class GravityGun : Pickupable
 
             if (hit.transform.TryGetComponent(out GravityObjectModifier gravityObjectModifier))
             {
-                gravityObjectModifier.ModifyGravitySecondary();
-            }
-            else if (hit.collider != null && hit.transform.CompareTag("targeteable") && !IsInLayer(hit.transform.gameObject, "PickUp") && IsInLayer(hit.transform.gameObject, "Gravitable"))
-            {
-                playerGravity.IsTargetRepulsor = true;
-                playerGravity.Target = hit.transform;
-            }
-            else if (hit.collider != null && !IsInLayer(hit.transform.gameObject, "PickUp") && IsInLayer(hit.transform.gameObject, "Gravitable"))
-            {
-                playerGravity.Target = null;
-                playerGravity.GravityDirection = hit.normal;
+                gravityObjectModifier.ModifyGravityPrimary();
             }
         }
         else
