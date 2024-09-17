@@ -134,7 +134,7 @@ public class GravityPlayerController : MonoBehaviour
     private void Jump()
     {
         // Aplicar una fuerza de salto en la dirección opuesta a la gravedad
-        rb.AddForce(-gravityDirection * jumpForce, ForceMode.Impulse);
+        if(!isCrouching) rb.AddForce(-gravityDirection * jumpForce, ForceMode.Impulse);
     }
 
     void Crouch()
@@ -149,7 +149,7 @@ public class GravityPlayerController : MonoBehaviour
     {
         // Comprobar si hay espacio para ponerse de pie
         RaycastHit hit;
-        if (!Physics.SphereCast(transform.position, collider.radius, Vector3.up, out hit, originalHeight - crouchHeight, ceilingLayer))
+        if (!Physics.SphereCast(transform.position, collider.radius, transform.up, out hit, originalHeight - crouchHeight, ceilingLayer))
         {
             // Si no hay nada encima, levantarse
             StandUp();

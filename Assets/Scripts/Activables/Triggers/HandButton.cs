@@ -7,6 +7,7 @@ public class HandButton : ActivableTrigger, IInteractive
     [SerializeField] private Transform movingPart;
     [SerializeField] private float moveDistance = 0.01f; // Distancia que se moverá la parte móvil
     [SerializeField] private float moveSpeed = 0.1f; // Velocidad del movimiento
+    [SerializeField] private AudioSource audioSource;
 
     private Vector3 initialPosition; // Posición inicial de la parte móvil
     private Vector3 pressedPosition; // Posición cuando el botón está presionado
@@ -61,6 +62,7 @@ public class HandButton : ActivableTrigger, IInteractive
     public void Interact()
     {
         Debug.Log("Botón presionado");
+        if(audioSource) audioSource.Play();
         ToggleAll();
     }
 }

@@ -8,6 +8,10 @@ public class FloorButton : ActivableTrigger
     [SerializeField] private float moveDistance = 0.1f; // Distancia que se moverá la parte móvil
     [SerializeField] private float moveSpeed = 0.1f; // Velocidad del movimiento
     [SerializeField] private LayerMask activatableLayers;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip activateclip;
+    [SerializeField] private AudioClip deactivateclip;
+
 
     private Vector3 initialPosition; // Posición inicial de la parte móvil
     private Vector3 pressedPosition; // Posición cuando el botón está presionado
@@ -52,11 +56,21 @@ public class FloorButton : ActivableTrigger
 
     protected override void OnTriggerActivated()
     {
+        if (audioSource)
+        {
+            audioSource.clip = activateclip;
+            audioSource.Play();
+        }
         Debug.Log("Botón activado");
     }
 
     protected override void OnTriggerDeactivated()
     {
+        if (audioSource)
+        {
+            audioSource.clip = deactivateclip;
+            audioSource.Play();
+        }
         Debug.Log("Botón desactivado");
     }
 
