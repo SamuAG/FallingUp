@@ -9,6 +9,7 @@ public class GravityGun : Pickupable
     [SerializeField] LineRenderer line;
     [SerializeField] float timeRay = 0.7f;
     [SerializeField] LayerMask layerMask;
+    [SerializeField] Animator anim;
 
     GravityObject gravityObject;
     private GravityPlayerController playerGravity;
@@ -46,6 +47,7 @@ public class GravityGun : Pickupable
         StartCoroutine(DrawAndDisableLine());
 
         feedbacks.PlayFeedbacks();
+        if(anim) anim.SetTrigger("Shoot");
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity, layerMask))
         {
@@ -66,6 +68,7 @@ public class GravityGun : Pickupable
         {
             SetLineRendererPosition(Camera.main.transform.position + Camera.main.transform.forward * 100);
         }
+        
     }
 
     public override void UsePrimaryUp()
@@ -87,6 +90,7 @@ public class GravityGun : Pickupable
         StartCoroutine(DrawAndDisableLine());
 
         feedbacks.PlayFeedbacks();
+        if (anim) anim.SetTrigger("ShootObject");
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity, layerMask))
         {
@@ -101,6 +105,7 @@ public class GravityGun : Pickupable
         {
             SetLineRendererPosition(Camera.main.transform.position + Camera.main.transform.forward * 100);
         }
+        
     }
 
     public override void UseSecondaryUp()
@@ -133,6 +138,9 @@ public class GravityGun : Pickupable
 
         // Desactivar el LineRenderer
         line.enabled = false;
+
+        if (anim) anim.ResetTrigger("Shoot");
+        if (anim) anim.ResetTrigger("ShootObject");
     }
 
     private void SetLineRendererPosition(Vector3 endPosition)
