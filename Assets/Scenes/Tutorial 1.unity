@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: e4bafc49ec57f894e981f859a0c06a9e, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 3e93841d55fdc0844bb1a70e53ef827b, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e283bb2623c842d47ba74b3e80ff9a9f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1095,7 +1095,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3522,6 +3522,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1030973823, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973827, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973831, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973835, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1030973820, guid: abc00000000008054742269728392189, type: 3}
     m_RemovedGameObjects: []
@@ -4800,6 +4816,10 @@ PrefabInstance:
     - target: {fileID: 4819848746932945874, guid: 9b412d86ab80b5b4fa1b841efeacd2b5, type: 3}
       propertyPath: m_Name
       value: LamparaRara
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819848746932945874, guid: 9b412d86ab80b5b4fa1b841efeacd2b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7113986512306526354, guid: 9b412d86ab80b5b4fa1b841efeacd2b5, type: 3}
       propertyPath: m_RootOrder
@@ -7044,7 +7064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793974122471688766, guid: b46d68b7139d5df4c8e71cc8fab5d160, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4291987051228764072, guid: b46d68b7139d5df4c8e71cc8fab5d160, type: 3}
       propertyPath: m_RootOrder
@@ -9493,6 +9513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Room1_Wall_Middle1 (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 1030973817, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1030973818, guid: abc00000000008054742269728392189, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9537,6 +9561,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1030973821, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1030973822, guid: abc00000000008054742269728392189, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9544,6 +9572,18 @@ PrefabInstance:
     - target: {fileID: 1030973822, guid: abc00000000008054742269728392189, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973825, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973829, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973833, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1030973820, guid: abc00000000008054742269728392189, type: 3}
@@ -11715,6 +11755,10 @@ PrefabInstance:
     - target: {fileID: 4819848746932945874, guid: 9b412d86ab80b5b4fa1b841efeacd2b5, type: 3}
       propertyPath: m_Name
       value: LamparaRara (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819848746932945874, guid: 9b412d86ab80b5b4fa1b841efeacd2b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7113986512306526354, guid: 9b412d86ab80b5b4fa1b841efeacd2b5, type: 3}
       propertyPath: m_RootOrder
@@ -16772,6 +16816,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030973818, guid: abc00000000008054742269728392189, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973823, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973827, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973831, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973835, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -22870,7 +22930,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4364430964396831770, guid: 45fe4e57d4ead4944a89c38a50e8af57, type: 3}
+    - {fileID: 6899493800274346138, guid: 45fe4e57d4ead4944a89c38a50e8af57, type: 3}
+    - {fileID: 7205231520077848298, guid: 45fe4e57d4ead4944a89c38a50e8af57, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7859003713015070441, guid: 45fe4e57d4ead4944a89c38a50e8af57, type: 3}
       insertIndex: -1
@@ -25871,7 +25934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4186779136656850175, guid: fc89f01b899f0964aa6e2729a9b0534d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29361,6 +29424,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030973818, guid: abc00000000008054742269728392189, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973823, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973827, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973831, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973835, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -34547,6 +34626,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1030973818, guid: abc00000000008054742269728392189, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973823, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973827, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973831, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030973835, guid: abc00000000008054742269728392189, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

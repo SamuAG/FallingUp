@@ -35,7 +35,7 @@ public class ObjectPicker : MonoBehaviour
             }
 
             // Lanzar el objeto
-            if (Input.GetMouseButtonDown(1)) // Botón derecho del mouse
+            if (Input.GetKeyDown(KeyCode.Q)) // Botón derecho del mouse
             {
                 ThrowObject();
             }
