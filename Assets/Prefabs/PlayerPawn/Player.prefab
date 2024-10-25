@@ -825,7 +825,7 @@ MonoBehaviour:
   moveSpeed: 5
   sprintSpeed: 8
   crouchSpeed: 3
-  maxSpeed: 10
+  maxSpeed: 50
   lookSensitivity: 2
   crouchHeight: 1
   ceilingLayer:
@@ -836,7 +836,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 319
   groundCheck: {fileID: 9153778539366741089}
-  groundDistance: 0.01
+  groundDistance: 0.1
   gravityForce: 9.81
   gravityDirection: {x: 0, y: -1, z: 0}
   target: {fileID: 0}
