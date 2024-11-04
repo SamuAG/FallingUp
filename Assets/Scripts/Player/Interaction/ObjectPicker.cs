@@ -60,7 +60,7 @@ public class ObjectPicker : MonoBehaviour
                 if (heldObjectRb.TryGetComponent<GravityObject>(out gravityObject)) gravityObject.enabled = false;
                 else heldObjectRb.useGravity = false;
 
-                // heldObjectRb.freezeRotation = true;
+                heldObjectRb.freezeRotation = true;
             }
         }
     }
@@ -82,7 +82,7 @@ public class ObjectPicker : MonoBehaviour
         GravityObject gravityObject;
         if (heldObjectRb.TryGetComponent<GravityObject>(out gravityObject)) gravityObject.enabled = true;
         else heldObjectRb.useGravity = true;
-        // heldObjectRb.freezeRotation = false;
+        heldObjectRb.freezeRotation = false;
         heldObject = null;
         heldObjectRb = null;
     }
