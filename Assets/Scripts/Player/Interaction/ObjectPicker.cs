@@ -61,6 +61,10 @@ public class ObjectPicker : MonoBehaviour
                 else heldObjectRb.useGravity = false;
 
                 heldObjectRb.freezeRotation = true;
+
+                // Solucionar el propsurfing
+                int playerLayer = LayerMask.NameToLayer("Player");
+                heldObjectRb.excludeLayers |= (1 << playerLayer);
             }
         }
     }
@@ -68,15 +72,36 @@ public class ObjectPicker : MonoBehaviour
     void MoveObject()
     {
         // Calcular la nueva posición y mover el objeto hacia ella
+        //Vector3 targetPosition = playerCamera.position + playerCamera.forward * holdDistance;
+        //Vector3 direction = targetPosition - heldObject.transform.position;
+
+        //heldObjectRb.velocity = direction * 10f; // Ajusta el valor para suavizar el movimiento
+
+        // Calcular la nueva posición a la que debe ir el objeto
         Vector3 targetPosition = playerCamera.position + playerCamera.forward * holdDistance;
         Vector3 direction = targetPosition - heldObject.transform.position;
+        float distanceToTarget = direction.magnitude;
 
-        heldObjectRb.velocity = direction * 10f; // Ajusta el valor para suavizar el movimiento
+        // Si la distancia es mayor que un umbral (por ejemplo, 1.5 veces la distancia de retención), teletransportar el objeto
+        if (distanceToTarget > holdDistance * 1.5f)
+        {
+            //heldObject.transform.position = targetPosition;
+            DropObject();
+        }
+        else
+        {
+            // Si está dentro de un rango aceptable, moverlo gradualmente hacia la posición con MovePosition
+            heldObjectRb.velocity = direction * 10f;
+        }
     }
 
     public void DropObject()
     {
         if(heldObject == null && heldObjectRb == null) return;
+
+        // Que pueda volver a colisionar con el jugador
+        int playerLayer = LayerMask.NameToLayer("Player");
+        heldObjectRb.excludeLayers &= ~(1 << playerLayer);
 
         // Soltar el objeto
         GravityObject gravityObject;
@@ -89,6 +114,10 @@ public class ObjectPicker : MonoBehaviour
 
     void ThrowObject()
     {
+        // Que pueda volver a colisionar con el jugador
+        int playerLayer = LayerMask.NameToLayer("Player");
+        heldObjectRb.excludeLayers &= ~(1 << playerLayer);
+
         // Lanzar el objeto con una fuerza determinada
         GravityObject gravityObject;
         if (heldObjectRb.TryGetComponent<GravityObject>(out gravityObject)) gravityObject.enabled = true;
