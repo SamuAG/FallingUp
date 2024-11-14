@@ -29990,12 +29990,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 175921996058783865, guid: 0427d9f1b2a540042a86f7b41489ce93, type: 3}
       propertyPath: m_Name
-      value: AudioTrigger
+      value: AudioTrigger(Disabled)
+      objectReference: {fileID: 0}
+    - target: {fileID: 175921996058783865, guid: 0427d9f1b2a540042a86f7b41489ce93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4147677877691144818, guid: 0427d9f1b2a540042a86f7b41489ce93, type: 3}
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6c1e0633b06115f4abb9fe23bbb2ec78, type: 3}
+    - target: {fileID: 7084130355671122657, guid: 0427d9f1b2a540042a86f7b41489ce93, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2144474783331297886, guid: 0427d9f1b2a540042a86f7b41489ce93, type: 3}
     m_RemovedGameObjects: []

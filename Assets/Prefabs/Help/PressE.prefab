@@ -186,4 +186,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 0}
-  lockY: 0
+  lockY: 1
