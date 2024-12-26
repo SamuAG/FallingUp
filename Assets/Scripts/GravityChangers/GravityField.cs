@@ -10,6 +10,8 @@ public class GravityField : MonoBehaviour
     [SerializeField] private Transform target = null;
     [SerializeField] MMFeedbacks feedbacks;
 
+    public Vector3 GravityDirection { get => gravityDirection; set => gravityDirection = value; }
+    public Transform Target { get => target; set => target = value; }
 
     private void OnTriggerEnter(Collider other)
     {

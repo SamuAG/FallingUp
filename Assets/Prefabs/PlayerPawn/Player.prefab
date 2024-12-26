@@ -857,6 +857,8 @@ MonoBehaviour:
   pickUpRange: 3
   holdDistance: 2
   throwForce: 10
+  dropDistance: 2
+  pickUpSpeed: 20
   pickUpLayer:
     serializedVersion: 2
     m_Bits: 1152

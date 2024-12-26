@@ -6,6 +6,8 @@ public class ObjectPicker : MonoBehaviour
     public float pickUpRange = 3.0f;             // Distancia máxima para recoger objetos
     public float holdDistance = 2.0f;            // Distancia a la que se sostendrá el objeto frente al jugador
     public float throwForce = 10.0f;             // Fuerza con la que se lanzará el objeto
+    public float dropDistance = 2.0f;            // Distancia a la que se soltará el objeto si se aleja demasiado
+    public float pickUpSpeed = 20.0f;            // Velocidad a la que se moverá el objeto hacia el jugador
     public LayerMask pickUpLayer;                // Máscara de capas para objetos levantables
 
     private GameObject heldObject = null;        // Objeto actualmente levantado
@@ -82,8 +84,8 @@ public class ObjectPicker : MonoBehaviour
         Vector3 direction = targetPosition - heldObject.transform.position;
         float distanceToTarget = direction.magnitude;
 
-        // Si la distancia es mayor que un umbral (por ejemplo, 1.5 veces la distancia de retención), teletransportar el objeto
-        if (distanceToTarget > holdDistance * 1.5f)
+        // Si la distancia es mayor que un umbral (por ejemplo, 1.5 veces la distancia de retención), soltar el objeto
+        if (distanceToTarget > holdDistance * dropDistance)
         {
             //heldObject.transform.position = targetPosition;
             DropObject();
@@ -91,7 +93,7 @@ public class ObjectPicker : MonoBehaviour
         else
         {
             // Si está dentro de un rango aceptable, moverlo gradualmente hacia la posición con MovePosition
-            heldObjectRb.velocity = direction * 10f;
+            heldObjectRb.velocity = direction * pickUpSpeed;
         }
     }
 
