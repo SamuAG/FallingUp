@@ -512,11 +512,11 @@ GameObject:
   - component: {fileID: 3262683382826542515}
   - component: {fileID: 7604845753371046722}
   - component: {fileID: 1224190929464002946}
-  - component: {fileID: 4025229446261088407}
+  - component: {fileID: 6684026748743388333}
   - component: {fileID: -7709881641895738516}
   - component: {fileID: -6307090782729588290}
   m_Layer: 7
-  m_Name: SimpleGravityObject
+  m_Name: TwoObjectsGravity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -652,7 +652,7 @@ MonoBehaviour:
   gravityDirection: {x: 0, y: -1, z: 0}
   target: {fileID: 0}
   isRepulsor: 0
---- !u!114 &4025229446261088407
+--- !u!114 &6684026748743388333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -661,10 +661,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3760643174453025549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54977118feca3c84095f8df823e80416, type: 3}
+  m_Script: {fileID: 11500000, guid: ac4a8045b3d5b2d47a8c806b17e7dfe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  currentTarget: {fileID: 0}
+  target1: {fileID: 0}
+  target2: {fileID: 0}
 --- !u!82 &-7709881641895738516
 AudioSource:
   m_ObjectHideFlags: 0

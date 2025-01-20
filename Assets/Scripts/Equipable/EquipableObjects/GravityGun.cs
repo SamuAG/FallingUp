@@ -99,6 +99,7 @@ public class GravityGun : Pickupable
             if (hit.transform.TryGetComponent(out GravityObjectModifier gravityObjectModifier))
             {
                 gravityObjectModifier.ModifyGravityPrimary();
+                // gravityObjectModifier.ModifyGravitySecondary();
             }
         }
         else

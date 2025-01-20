@@ -695,6 +695,7 @@ GameObject:
   - component: {fileID: 4526151890958684894}
   - component: {fileID: 4395381223991290153}
   - component: {fileID: 3598264730521917979}
+  - component: {fileID: 7153262180902986266}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -913,6 +914,25 @@ MonoBehaviour:
   deathDelay: 2
   fadeSpeed: 1
   feedbacks: {fileID: 7703140810121181203}
+--- !u!114 &7153262180902986266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4186779136656850175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d33529a7e9f2bb4ebcea6fe9226aef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crossAir: {fileID: 0}
+  playerCam: {fileID: 2533817801402593997}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  gravitableColor: {r: 0, g: 1, b: 0, a: 1}
+  targeteableLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &4617301004137108010
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private Material solveMaterial;
     [SerializeField] private Material dissolveMaterial;
     [SerializeField] private Vector3 gravityDirection = Vector3.down;
+    [SerializeField] private Transform gravityTarget = null;
+    [SerializeField] private Transform target1 = null;
+    [SerializeField] private Transform target2 = null;
     [SerializeField] private float gravityForce = 9.81f;
     [SerializeField] private float speed = 2f;
     [SerializeField] private float activationDistance = 2f; // Distancia mínima para activar la gravedad
@@ -97,7 +100,15 @@ public class ObjectSpawner : MonoBehaviour
         GravityObject newObject = Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
         objectMaterials = GetMeshRenderersMaterials(GetMeshRenderersInChildren(newObject.transform));
         newObject.GravityDirection = gravityDirection;
+        newObject.Target = gravityTarget;
         newObject.GravityForce = 0f; // Inicialmente desactivar la gravedad
+
+        // Si son de gravedad entre dos cuerpos hay q ponerlo
+        if(newObject.GetComponent<TwoBodiesGravity>() != null)
+        {
+            newObject.GetComponent<TwoBodiesGravity>().Target1 = target1;
+            newObject.GetComponent<TwoBodiesGravity>().Target2 = target2;
+        }
 
         // Guardar la referencia del último objeto spawneado
         nearSpawnedObject = newObject;

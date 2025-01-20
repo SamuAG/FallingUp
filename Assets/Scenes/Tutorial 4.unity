@@ -4978,13 +4978,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2095046205165082685, guid: 9c753f0747e64e0419520cc8c970e9e2, type: 3}
       propertyPath: m_text
-      value: Some objects can have their gravity reversed. To interact with these
-        invertible objects, aim at them and use the right mouse button to reverse
-        their gravitational pull.
+      value: Some objects can have their gravity reversed. When the crosshair turns
+        pink, it means the object is invertible. Aim at it and use the right mouse
+        button to reverse its gravitational pull.
       objectReference: {fileID: 0}
     - target: {fileID: 2095046205165082685, guid: 9c753f0747e64e0419520cc8c970e9e2, type: 3}
       propertyPath: m_fontSize
-      value: 26.5
+      value: 24.15
       objectReference: {fileID: 0}
     - target: {fileID: 2095046205165082685, guid: 9c753f0747e64e0419520cc8c970e9e2, type: 3}
       propertyPath: m_margin.z

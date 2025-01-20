@@ -16,16 +16,16 @@ public class SimpleGravityChange : GravityObjectModifier
     public override void ModifyGravitySecondary()
     {
         if (!target) return;
-
-        if (gravityObject.Target)
-        {
-            gravityObject.Target = null;
-            gravityObject.GravityDirection = lastDirection;
-        }
-        else
-        {
-            lastDirection = gravityObject.GravityDirection;
-            gravityObject.Target = target;
-        }
+        //gravityObject.Target = target;
+        //if (gravityObject.Target)
+        //{
+        //    gravityObject.Target = null;
+        //    gravityObject.GravityDirection = lastDirection;
+        //}
+        //else
+        //{
+        //    lastDirection = gravityObject.GravityDirection;
+        //    gravityObject.Target = target;
+        //}
     }
 }
