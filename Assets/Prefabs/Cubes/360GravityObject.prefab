@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: -2204431896880574115}
   m_Layer: 7
   m_Name: 360GravityObject
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   gravityForce: 9.81
   gravityDirection: {x: 0, y: -1, z: 0}
   target: {fileID: 0}
+  isRepulsor: 0
 --- !u!114 &7341713203604681390
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -33143,9 +33143,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2095046205165082685, guid: 9c753f0747e64e0419520cc8c970e9e2, type: 3}
       propertyPath: m_text
-      value: 'Green force fields alter the
-
-        direction of your gravity'
+      value: "Green force fields shift \nyour gravity towards the \ndirection of
+        the arrow."
       objectReference: {fileID: 0}
     - target: {fileID: 2095046205165082685, guid: 9c753f0747e64e0419520cc8c970e9e2, type: 3}
       propertyPath: m_fontSize

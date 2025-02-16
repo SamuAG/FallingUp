@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8752479736679926552}
   m_Layer: 7
   m_Name: HeavyGravityObject
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   gravityForce: 9.81
   gravityDirection: {x: 0, y: -1, z: 0}
   target: {fileID: 0}
+  isRepulsor: 0
 --- !u!82 &2680451788525979967
 AudioSource:
   m_ObjectHideFlags: 0

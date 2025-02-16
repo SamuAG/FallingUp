@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: -2587668336718893599}
   m_Layer: 7
   m_Name: ClockGravityObject
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -734,6 +734,7 @@ MonoBehaviour:
   gravityForce: 9.81
   gravityDirection: {x: 0, y: -1, z: 0}
   target: {fileID: 0}
+  isRepulsor: 0
 --- !u!114 &7845316837259814477
 MonoBehaviour:
   m_ObjectHideFlags: 0

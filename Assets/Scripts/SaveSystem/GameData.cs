@@ -6,7 +6,7 @@ public class GameData
     public float spawnPositionY = 1.13999987f;
     public float spawnPositionZ = 3f;
     public float spawnRotationX = 0f;
-    public float spawnRotationY = 0f;
+    public float spawnRotationY = 180f;
     public float spawnRotationZ = 0f;
     public float gravityForce = 9.81f;
     public float gravityDirectionX = 0f;
